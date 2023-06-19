@@ -1,11 +1,11 @@
 import React from 'react';
 
 const FormInfo = (props) => {
-  const { label, onChange, id, ...inputProp } = props;
+  const { label, onChange, id, ...inputProps } = props; // Change inputProp to inputProps
   return (
     <div className='formInput'>
-      <label>{label}</label>
-      <input {...inputProp} onChange={onChange} required />
+      <label htmlFor={id}>{label}</label> {/* Add htmlFor attribute with the id */}
+      <input id={id} {...inputProps} onChange={onChange} required />
     </div>
   );
 };
